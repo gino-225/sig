@@ -1,4 +1,15 @@
 <%= form_with(model: rental, local: true, id: "form", html: { multipart: true } ) do |form| %>
+<% if rental.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(rental.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+    <ul>
+    <% rental.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
   <div class="field">
   <%= form.label :signature_blank %>
   <div class="wrapper-blank">
