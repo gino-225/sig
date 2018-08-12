@@ -69,7 +69,6 @@ class RentalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rental_params
-      #params.fetch(:rental, {})
         params.require(:rental).permit(:first_name, :last_name, :signatures, :signature_img, :signature_blank)
     end
 end

@@ -5,8 +5,8 @@ class Rental < ApplicationRecord
     has_attached_file :signature_img, :default_url => ""
     has_attached_file :signature_blank, :default_url => ""
 
-    #validates :signature_img, presence: { message: 'Please enter valid signature on image' }
-    #validates :signature_blank, presence: { message: 'Please enter valid signature on blank' }
+    validates :signature_img, presence: { message: 'Please enter valid signature on image' }
+    validates :signature_blank, presence: { message: 'Please enter valid signature on blank' }
 
     before_save :set_file_name
 
