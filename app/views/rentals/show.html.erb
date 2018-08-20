@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @rental.signature_img.url %>
+
 <%= link_to 'Edit', edit_rental_path(@rental) %> |
 <%= link_to 'Back', rentals_path %>
